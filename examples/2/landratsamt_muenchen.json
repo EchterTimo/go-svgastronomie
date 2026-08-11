@@ -1,0 +1,284 @@
+{
+  "url": "https://sv-gastronomie.de/menu/Landratsamt,%20M%C3%BCnchen/Mittagsmen%C3%BC",
+  "location": "Landratsamt, München",
+  "menu_card": "Mittagsmenü",
+  "week": {
+    "days": [
+      {
+        "time": "2026-08-10T00:00:00+02:00",
+        "dishes": [
+          {
+            "name": "Curry - Kokossuppe",
+            "description": "mit Petersillie",
+            "price": 0.95,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Hackbraten",
+            "description": "mit Salzkartoffeln und Bratensoße",
+            "price": 4.8,
+            "tags": [
+              "Enthält Schweinefleisch"
+            ]
+          },
+          {
+            "name": "Hausgemachte Pasta",
+            "description": "mit Erbsen, Zucchini, Ricotta und Hartkäse",
+            "price": 4.4,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "Blumenkohlcremesuppe",
+            "description": "mit Schnittlauch",
+            "price": 0.95,
+            "tags": [
+              "Vegetarisch",
+              "Glutenfrei"
+            ]
+          },
+          {
+            "name": "Schweinerahmgeschnetzeltes",
+            "description": "Spätzle-Nudeln",
+            "price": 4.8,
+            "tags": [
+              "Enthält Schweinefleisch"
+            ]
+          },
+          {
+            "name": "Käsespätzle",
+            "description": "mit geschmorten Zwiebeln",
+            "price": 4.4,
+            "tags": [
+              "Vegetarisch"
+            ]
+          }
+        ]
+      },
+      {
+        "time": "2026-08-11T00:00:00+02:00",
+        "dishes": [
+          {
+            "name": "Blumenkohlcremesuppe",
+            "description": "mit Schnittlauch",
+            "price": 0.95,
+            "tags": [
+              "Vegetarisch",
+              "Glutenfrei"
+            ]
+          },
+          {
+            "name": "Schweinerahmgeschnetzeltes",
+            "description": "Spätzle-Nudeln",
+            "price": 4.8,
+            "tags": [
+              "Enthält Schweinefleisch"
+            ]
+          },
+          {
+            "name": "Käsespätzle",
+            "description": "mit geschmorten Zwiebeln",
+            "price": 4.4,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "Chilli-Brühe",
+            "description": "mit Bohnen & Paprika",
+            "price": 0.95,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Moussaka",
+            "description": "vom Rind",
+            "price": 4.8,
+            "tags": []
+          },
+          {
+            "name": "Spinatknödel",
+            "description": "mit Tomatensoße",
+            "price": 4.4,
+            "tags": [
+              "Vegetarisch"
+            ]
+          }
+        ]
+      },
+      {
+        "time": "2026-08-12T00:00:00+02:00",
+        "dishes": [
+          {
+            "name": "Chilli-Brühe",
+            "description": "mit Bohnen & Paprika",
+            "price": 0.95,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Moussaka",
+            "description": "vom Rind",
+            "price": 4.8,
+            "tags": []
+          },
+          {
+            "name": "Spinatknödel",
+            "description": "mit Tomatensoße",
+            "price": 4.4,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "Curry - Kokossuppe",
+            "description": "mit Petersillie",
+            "price": 0.95,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Hackbraten",
+            "description": "mit Salzkartoffeln und Bratensoße",
+            "price": 4.8,
+            "tags": [
+              "Enthält Schweinefleisch"
+            ]
+          },
+          {
+            "name": "Hausgemachte Pasta",
+            "description": "mit Erbsen, Zucchini, Ricotta und Hartkäse",
+            "price": 4.4,
+            "tags": [
+              "Vegetarisch"
+            ]
+          }
+        ]
+      },
+      {
+        "time": "2026-08-13T00:00:00+02:00",
+        "dishes": [
+          {
+            "name": "Chilli-Brühe",
+            "description": "mit Bohnen & Paprika",
+            "price": 0.95,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Hackbraten",
+            "description": "mit Salzkartoffeln und Bratensoße",
+            "price": 4.8,
+            "tags": [
+              "Enthält Schweinefleisch"
+            ]
+          },
+          {
+            "name": "Hausgemachte Pasta",
+            "description": "mit Erbsen, Zucchini, Ricotta und Hartkäse",
+            "price": 4.4,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "Gemüsebrühe",
+            "description": "mit Pfannkuchenstreifen",
+            "price": 0.95,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "Katalanisches Hähnchen",
+            "description": "mit Gemüse und Kartoffeln",
+            "price": 4.8,
+            "tags": [
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Tomaten-Risotto",
+            "description": "mit Fetakäse",
+            "price": 4.4,
+            "tags": [
+              "Vegetarisch",
+              "Glutenfrei"
+            ]
+          }
+        ]
+      },
+      {
+        "time": "2026-08-14T00:00:00+02:00",
+        "dishes": [
+          {
+            "name": "Curry - Kokossuppe",
+            "description": "mit Pfannkuchenstreifen",
+            "price": 0.95,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "Katalanisches Hähnchen",
+            "description": "mit Gemüse und Kartoffeln",
+            "price": 4.8,
+            "tags": [
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Tomaten-Risotto",
+            "description": "mit Fetakäse",
+            "price": 4.4,
+            "tags": [
+              "Vegetarisch",
+              "Glutenfrei"
+            ]
+          },
+          {
+            "name": "Klare Zucchinisuppe",
+            "description": "mit Grießklößchen",
+            "price": 0.95,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "Fischfilet Bordelaise",
+            "description": "mit Meerrettichsoße und Dillkartoffeln",
+            "price": 4.8,
+            "tags": []
+          },
+          {
+            "name": "Mohnschupfnudeln",
+            "description": "mit Preiselbeeren",
+            "price": 4.4,
+            "tags": [
+              "Vegetarisch"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

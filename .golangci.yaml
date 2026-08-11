@@ -1,0 +1,35 @@
+---
+version: '2'
+run:
+  timeout: 5m
+linters:
+  enable:
+    - bodyclose
+    - copyloopvar
+    - dupl
+    - embeddedstructfieldcheck
+    - err113
+    - errcheck
+    - errname
+    - errorlint
+    - exhaustive
+    - funcorder
+    - funlen
+    - gochecknoglobals
+    - goconst
+    - gocritic
+    - godot
+    - govet
+    - inamedparam
+    - ineffassign
+    - lll
+    - makezero
+    - mnd
+    - modernize
+    - prealloc
+    - reassign
+    - revive
+    - staticcheck
+    - unparam
+    - unused
+    - varnamelen

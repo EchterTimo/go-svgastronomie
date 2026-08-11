@@ -1,0 +1,439 @@
+{
+  "url": "https://sv-gastronomie.de/menu/apoBank,%20D%C3%BCsseldorf/Mittagsmen%C3%BC",
+  "location": "apoBank, Düsseldorf",
+  "menu_card": "Mittagsmenü",
+  "week": {
+    "days": [
+      {
+        "time": "2026-08-10T00:00:00+02:00",
+        "dishes": [
+          {
+            "name": "\"Peking Soup\"",
+            "description": "mit Glasnudeln & Hähnchen",
+            "price": 1.8,
+            "tags": [
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Currywurst XL",
+            "description": "mit Pommes und Currysoße",
+            "price": 6.5,
+            "tags": [
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "\"Pad Thai\" Thailändische Reisnudelpfanne",
+            "description": "mit Tofu",
+            "price": 4.9,
+            "tags": [
+              "Vegetarisch",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Salat Bowl´s",
+            "description": "ab 4,90€",
+            "price": 4.9,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Pasta \"Diavolo\"",
+            "description": "mit Ruccola und Parmesan",
+            "price": 4.9,
+            "tags": [
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Latte Macchiato Pudding",
+            "description": "mit Sahne",
+            "price": 1.2,
+            "tags": [
+              "Vegetarisch",
+              "Glutenfrei"
+            ]
+          },
+          {
+            "name": "Gazpacho mit Melone, Tomate & Minze",
+            "description": "",
+            "price": 1.8,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "Frische Bratwurst an Jus",
+            "description": "mit Rahm Porre und Kartoffelpüree",
+            "price": 6.5,
+            "tags": []
+          },
+          {
+            "name": "Vegane gefüllte Paprikaschote",
+            "description": "mit Reis und Tomatensauce",
+            "price": 4.9,
+            "tags": [
+              "Vegan",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Salat Bowl´s",
+            "description": "ab 4,90€",
+            "price": 4.9,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Pizza Quattro Formaggi",
+            "description": "",
+            "price": 7,
+            "tags": []
+          },
+          {
+            "name": "Bayrischcreme",
+            "description": "mit Himbeerpüree",
+            "price": 1.2,
+            "tags": [
+              "Glutenfrei"
+            ]
+          }
+        ]
+      },
+      {
+        "time": "2026-08-11T00:00:00+02:00",
+        "dishes": [
+          {
+            "name": "Gazpacho mit Melone, Tomate & Minze",
+            "description": "",
+            "price": 1.8,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "Frische Bratwurst an Jus",
+            "description": "mit Rahm Porre und Kartoffelpüree",
+            "price": 6.5,
+            "tags": []
+          },
+          {
+            "name": "Vegane gefüllte Paprikaschote",
+            "description": "mit Reis und Tomatensauce",
+            "price": 4.9,
+            "tags": [
+              "Vegan",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Salat Bowl´s",
+            "description": "ab 4,90€",
+            "price": 4.9,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Pizza Quattro Formaggi",
+            "description": "",
+            "price": 7,
+            "tags": []
+          },
+          {
+            "name": "Bayrischcreme",
+            "description": "mit Himbeerpüree",
+            "price": 1.2,
+            "tags": [
+              "Glutenfrei"
+            ]
+          }
+        ]
+      },
+      {
+        "time": "2026-08-12T00:00:00+02:00",
+        "dishes": [
+          {
+            "name": "Erbsencremesuppe",
+            "description": "mit Limette",
+            "price": 1.8,
+            "tags": [
+              "Vegetarisch",
+              "Glutenfrei"
+            ]
+          },
+          {
+            "name": "Bifteki mit  Zaziki",
+            "description": "dazu Tomatenreis und Krautsalat",
+            "price": 7,
+            "tags": []
+          },
+          {
+            "name": "Summer Bowl",
+            "description": "mit Couscous, Wassermelone, Gurken, Feta, Rucola, Kichererbsen und Ciabatta - Rosmarin Croutons",
+            "price": 6,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "Salat Bowl´s",
+            "description": "ab 4,90€",
+            "price": 4.9,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Poutine \"Mexican Style",
+            "description": "mit Mais, Kidneybohnen, Tomaten, Avocados und Pommes",
+            "price": 4.9,
+            "tags": [
+              "Vegetarisch",
+              "Glutenfrei"
+            ]
+          },
+          {
+            "name": "Frische Erdbeeren",
+            "description": "mit Vanillesauce",
+            "price": 1.2,
+            "tags": [
+              "Vegetarisch",
+              "Glutenfrei"
+            ]
+          }
+        ]
+      },
+      {
+        "time": "2026-08-13T00:00:00+02:00",
+        "dishes": [
+          {
+            "name": "Erbsencremesuppe",
+            "description": "mit Limette",
+            "price": 1.8,
+            "tags": [
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Currywurst XL",
+            "description": "mit Pommes und Currysoße",
+            "price": 6.5,
+            "tags": [
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "\"Pad Thai\" Thailändische Reisnudelpfanne",
+            "description": "mit Tofu",
+            "price": 4.9,
+            "tags": [
+              "Vegetarisch",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Salat Bowl´s",
+            "description": "ab 4,90€",
+            "price": 4.9,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Pasta \"Diavolo\"",
+            "description": "mit Ruccola und Parmesan",
+            "price": 4.9,
+            "tags": [
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Latte Macchiato Pudding",
+            "description": "mit Sahne",
+            "price": 1.2,
+            "tags": [
+              "Vegetarisch",
+              "Glutenfrei"
+            ]
+          },
+          {
+            "name": "Kräutercremesuppe",
+            "description": "",
+            "price": 1.8,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "Lachsforelle",
+            "description": "mit Tomaten-Zitronen-Risotto, dazu Fenchelgemüse",
+            "price": 7.5,
+            "tags": [
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Orientalischer Gemüse Wrap",
+            "description": "mit Süßkartoffel-Hummus, Ofengemüse, Couscous und Salat",
+            "price": 5.9,
+            "tags": [
+              "Vegan",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Salat Bowl´s",
+            "description": "ab 4,90€",
+            "price": 4.9,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Rotes Linsen Dal",
+            "description": "mit Naanbrot",
+            "price": 4.9,
+            "tags": [
+              "Vegan",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Mousse au Chocolate",
+            "description": "mit Kirschen",
+            "price": 1.2,
+            "tags": [
+              "Vegetarisch"
+            ]
+          }
+        ]
+      },
+      {
+        "time": "2026-08-14T00:00:00+02:00",
+        "dishes": [
+          {
+            "name": "Kräutercremesuppe",
+            "description": "",
+            "price": 1.8,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "Lachsforelle",
+            "description": "mit Tomaten-Zitronen-Risotto, dazu Fenchelgemüse",
+            "price": 7.5,
+            "tags": [
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Orientalischer Gemüse Wrap",
+            "description": "mit Süßkartoffel-Hummus, Ofengemüse, Couscous und Salat",
+            "price": 5.9,
+            "tags": [
+              "Vegan",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Salat Bowl´s",
+            "description": "ab 4,90€",
+            "price": 4.9,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Rotes Linsen Dal",
+            "description": "mit Naanbrot",
+            "price": 4.9,
+            "tags": [
+              "Vegan",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Mousse au Chocolate",
+            "description": "mit Kirschen",
+            "price": 1.2,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "Spinatcremesuppe",
+            "description": "",
+            "price": 1.8,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Schaschliktopf vom Schwein",
+            "description": "mit gebackenen Drillinge und Quark-Kräuter Dip",
+            "price": 6.3,
+            "tags": [
+              "Glutenfrei"
+            ]
+          },
+          {
+            "name": "Veganes Chili Sin Carne",
+            "description": "mit Reis",
+            "price": 4.9,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Salat Bowl´s",
+            "description": "ab 4,90€",
+            "price": 4.9,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Sommerlicher Obstsalat",
+            "description": "",
+            "price": 1.2,
+            "tags": [
+              "Vegan",
+              "Glutenfrei",
+              "Laktosefrei"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

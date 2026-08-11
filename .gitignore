@@ -30,3 +30,7 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Since this project is a lib the following files should not be included in the repo:
+/main.go
+/cmd/
