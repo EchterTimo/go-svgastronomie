@@ -19,7 +19,8 @@ var errNoNumericPrice = errors.New("no numeric price found")
 
 // Install checks if Playwright is installed and installs it if not.
 func Install() {
-	if _, err := playwright.Run(); err != nil {
+	pw, err := playwright.Run() //nolint:varnamelen
+	if err != nil {
 		fmt.Println("Playwright is not installed. Installing...")
 		if err := playwright.Install(&playwright.RunOptions{
 			Browsers:         []string{"chromium"},
@@ -27,6 +28,11 @@ func Install() {
 		}); err != nil {
 			log.Fatalf("could not install playwright: %v", err)
 		}
+		return
+	}
+
+	if err := pw.Stop(); err != nil {
+		log.Printf("could not stop playwright in install check: %v", err)
 	}
 }
 
@@ -121,33 +127,45 @@ func parsePrice(raw string) (float64, error) {
 	return strconv.ParseFloat(cleanPrice, 64)
 }
 
-func parseTagsFromElement(element playwright.Locator, dayName string) []string {
-	rawTags, err := element.Locator("app-product-custom-tag img").EvaluateAll(`nodes => nodes
-		.map(node => node.getAttribute("title"))
-		.filter(Boolean)`)
-	if err != nil {
-		log.Printf("could not read tags for day %s: %v", dayName, err)
-		return nil
-	}
+// rawDish holds unstructured dish data scraped from the website before parsing into a Dish object.
+type rawDish struct {
+	Name        string
+	Description string
+	Price       string
+	Tags        []string
+}
 
-	tagsList, ok := rawTags.([]any)
+func parseRawDish(value any) (rawDish, bool) {
+	dishMap, ok := value.(map[string]any)
 	if !ok {
-		return nil
+		return rawDish{}, false
 	}
 
-	tags := make([]string, 0, len(tagsList))
-	for _, rawTag := range tagsList {
-		tag, ok := rawTag.(string)
-		if !ok {
-			continue
-		}
-		tag = strings.TrimSpace(tag)
-		if tag != "" {
-			tags = append(tags, tag)
+	rawName, _ := dishMap["name"].(string)
+	rawDescription, _ := dishMap["description"].(string)
+	rawPrice, _ := dishMap["price"].(string)
+
+	tags := make([]string, 0)
+	if rawTags, ok := dishMap["tags"].([]any); ok {
+		tags = make([]string, 0, len(rawTags))
+		for _, rawTag := range rawTags {
+			tag, ok := rawTag.(string)
+			if !ok {
+				continue
+			}
+			tag = strings.TrimSpace(tag)
+			if tag != "" {
+				tags = append(tags, tag)
+			}
 		}
 	}
 
-	return tags
+	return rawDish{
+		Name:        strings.TrimSpace(rawName),
+		Description: strings.TrimSpace(rawDescription),
+		Price:       strings.TrimSpace(rawPrice),
+		Tags:        tags,
+	}, true
 }
 
 // ScrapeRestaurant scrapes the restaurant's page and returns a Restaurant object.
@@ -224,9 +242,10 @@ func ScrapeRestaurant(
 	}
 
 	weekStart := getWeekStart(time.Now())
-	weekDays := make([]Day, 0, len(getDaysOfWeek()))
+	daysOfWeek := getDaysOfWeek()
+	weekDays := make([]Day, 0, len(daysOfWeek))
 
-	for index, dayName := range getDaysOfWeek() {
+	for index, dayName := range daysOfWeek {
 		if err := page.Locator(fmt.Sprintf("a:has-text('%s')", dayName)).Click(); err != nil {
 			return nil, fmt.Errorf("could not click day %s: %w", dayName, err)
 		}
@@ -237,49 +256,48 @@ func ScrapeRestaurant(
 			return nil, fmt.Errorf("could not wait for dishes for day %s: %w", dayName, err)
 		}
 
-		elements, err := page.Locator("app-category:visible").All()
+		rawDishes, err := page.Locator("app-category:visible").EvaluateAll(`nodes => nodes.map(node => {
+			const name = node.querySelector("span.pre-wrap")?.textContent ?? "";
+			const description = node.querySelector("div.product-teaser")?.textContent ?? "";
+			const price = node.querySelector("div.price")?.textContent
+				?? node.querySelector("div.price-column")?.textContent
+				?? "";
+			const tags = Array.from(node.querySelectorAll("app-product-custom-tag img"))
+				.map(tagNode => tagNode.getAttribute("title"))
+				.filter(Boolean);
+
+			return { name, description, price, tags };
+		})`)
 		if err != nil {
-			return nil, fmt.Errorf("could not get elements for day %s: %w", dayName, err)
+			return nil, fmt.Errorf("could not read dishes for day %s: %w", dayName, err)
 		}
 
-		dishes := make([]Dish, 0, len(elements))
-		for _, element := range elements {
-			title, err := element.Locator("span.pre-wrap").TextContent()
-			if err != nil {
-				log.Printf("skipping dish without readable title for day %s: %v", dayName, err)
+		rawDishList, ok := rawDishes.([]any)
+		if !ok {
+			return nil, fmt.Errorf("unexpected dishes payload for day %s", dayName)
+		}
+
+		dishes := make([]Dish, 0, len(rawDishList))
+		for _, raw := range rawDishList {
+			rawDishData, ok := parseRawDish(raw)
+			if !ok {
+				continue
+			}
+			if rawDishData.Name == "" {
 				continue
 			}
 
-			descriptionText, err := element.Locator("div.product-teaser").TextContent()
+			price, err := parsePrice(rawDishData.Price)
 			if err != nil {
-				descriptionText = ""
-			}
-			var description string
-			if trimmed := strings.TrimSpace(descriptionText); trimmed != "" {
-				description = trimmed
-			}
-
-			priceText, err := element.Locator("div.price").TextContent()
-			if err != nil {
-				priceText, err = element.Locator("div.price-column").TextContent()
-			}
-			if err != nil {
-				log.Printf("skipping dish without readable price for day %s: %v", dayName, err)
+				log.Printf("skipping dish with unparseable price %q for day %s: %v", rawDishData.Price, dayName, err)
 				continue
 			}
-			price, err := parsePrice(priceText)
-			if err != nil {
-				log.Printf("skipping dish with unparseable price %q for day %s: %v", priceText, dayName, err)
-				continue
-			}
-
-			tags := parseTagsFromElement(element, dayName)
 
 			dishes = append(dishes, Dish{
-				Name:        strings.TrimSpace(title),
-				Description: description,
+				Name:        rawDishData.Name,
+				Description: rawDishData.Description,
 				Price:       price,
-				Tags:        tags,
+				Tags:        rawDishData.Tags,
 			})
 		}
 

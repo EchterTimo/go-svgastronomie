@@ -8,28 +8,6 @@
         "time": "2026-08-10T00:00:00+02:00",
         "dishes": [
           {
-            "name": "Caesar Salad (Wunschgericht)",
-            "description": "mit Römersalat, Cherrytomaten, Croutons, Grana Padano, Caesar Dressing, Pinienkerne und Ruccola (mit Hähnchen 8,95€)",
-            "price": 7.5,
-            "tags": []
-          },
-          {
-            "name": "Pizza Bolognese (Wunschgericht)",
-            "description": "mit Rinderhackfleisch, Tomatensoße, Mozzarella, Rucola, Zwiebelringe und Grana Padano",
-            "price": 7.95,
-            "tags": []
-          },
-          {
-            "name": "Hallo alle...Vitamine sind wichtig!",
-            "description": "Daher stellen wir in den Bereichen Bistro und Restaurant, jede Woche, Obst hin. Wo sich jeder gerne etwas mitnehmen darf, einfach so.",
-            "price": 0,
-            "tags": [
-              "Vegan",
-              "Glutenfrei",
-              "Laktosefrei"
-            ]
-          },
-          {
             "name": "Hallo alle...Vitamine sind wichtig!",
             "description": "Daher stellen wir in den Bereichen Bistro und Restaurant, jede Woche, Obst hin. Wo sich jeder gerne etwas mitnehmen darf, einfach so.",
             "price": 0,
@@ -44,32 +22,6 @@
       {
         "time": "2026-08-11T00:00:00+02:00",
         "dishes": [
-          {
-            "name": "Hallo alle...Vitamine sind wichtig!",
-            "description": "Daher stellen wir in den Bereichen Bistro und Restaurant, jede Woche, Obst hin. Wo sich jeder gerne etwas mitnehmen darf, einfach so.",
-            "price": 0,
-            "tags": [
-              "Vegan",
-              "Glutenfrei",
-              "Laktosefrei"
-            ]
-          },
-          {
-            "name": "Kumpir",
-            "description": "Ofenkartoffel mit Feta, Bulgur, Tomaten, Oliven, Peperonoi und Minz-Joghurtdip",
-            "price": 6.5,
-            "tags": [
-              "Vegetarisch"
-            ]
-          },
-          {
-            "name": "Frisches halbes Hähnchen",
-            "description": "mit Cole Slaw Salat und Pommes frites",
-            "price": 9.5,
-            "tags": [
-              "Glutenfrei"
-            ]
-          },
           {
             "name": "Hallo alle...Vitamine sind wichtig!",
             "description": "Daher stellen wir in den Bereichen Bistro und Restaurant, jede Woche, Obst hin. Wo sich jeder gerne etwas mitnehmen darf, einfach so.",
@@ -110,12 +62,6 @@
               "Glutenfrei",
               "Laktosefrei"
             ]
-          },
-          {
-            "name": "Caesar Salad (Wunschgericht)",
-            "description": "mit Römersalat, Cherrytomaten, Croutons, Grana Padano, Caesar Dressing, Pinienkerne und Ruccola (mit Hähnchen 8,95€)",
-            "price": 7.5,
-            "tags": []
           }
         ]
       },
@@ -123,7 +69,7 @@
         "time": "2026-08-13T00:00:00+02:00",
         "dishes": [
           {
-            "name": "Kumpir",
+            "name": "Caesar Salad (Wunschgericht)",
             "description": "mit Römersalat, Cherrytomaten, Croutons, Grana Padano, Caesar Dressing, Pinienkerne und Ruccola (mit Hähnchen 8,95€)",
             "price": 7.5,
             "tags": []
@@ -175,7 +121,7 @@
         "time": "2026-08-14T00:00:00+02:00",
         "dishes": [
           {
-            "name": "Caesar Salad (Wunschgericht)",
+            "name": "Minced Meat Bowl",
             "description": "Asia-Bowl mit veganem Hack, Duftreis, Edamame, Gurken, Möhren, Cashewkerne, Avocado & Rosted Sesame Sauce",
             "price": 6.95,
             "tags": [

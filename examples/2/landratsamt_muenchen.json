@@ -87,30 +87,6 @@
             "tags": [
               "Vegetarisch"
             ]
-          },
-          {
-            "name": "Chilli-Brühe",
-            "description": "mit Bohnen & Paprika",
-            "price": 0.95,
-            "tags": [
-              "Vegan",
-              "Glutenfrei",
-              "Laktosefrei"
-            ]
-          },
-          {
-            "name": "Moussaka",
-            "description": "vom Rind",
-            "price": 4.8,
-            "tags": []
-          },
-          {
-            "name": "Spinatknödel",
-            "description": "mit Tomatensoße",
-            "price": 4.4,
-            "tags": [
-              "Vegetarisch"
-            ]
           }
         ]
       },
@@ -173,8 +149,8 @@
         "time": "2026-08-13T00:00:00+02:00",
         "dishes": [
           {
-            "name": "Chilli-Brühe",
-            "description": "mit Bohnen & Paprika",
+            "name": "Curry - Kokossuppe",
+            "description": "mit Petersillie",
             "price": 0.95,
             "tags": [
               "Vegan",
@@ -197,32 +173,6 @@
             "tags": [
               "Vegetarisch"
             ]
-          },
-          {
-            "name": "Gemüsebrühe",
-            "description": "mit Pfannkuchenstreifen",
-            "price": 0.95,
-            "tags": [
-              "Vegetarisch"
-            ]
-          },
-          {
-            "name": "Katalanisches Hähnchen",
-            "description": "mit Gemüse und Kartoffeln",
-            "price": 4.8,
-            "tags": [
-              "Glutenfrei",
-              "Laktosefrei"
-            ]
-          },
-          {
-            "name": "Tomaten-Risotto",
-            "description": "mit Fetakäse",
-            "price": 4.4,
-            "tags": [
-              "Vegetarisch",
-              "Glutenfrei"
-            ]
           }
         ]
       },
@@ -230,7 +180,7 @@
         "time": "2026-08-14T00:00:00+02:00",
         "dishes": [
           {
-            "name": "Curry - Kokossuppe",
+            "name": "Gemüsebrühe",
             "description": "mit Pfannkuchenstreifen",
             "price": 0.95,
             "tags": [
