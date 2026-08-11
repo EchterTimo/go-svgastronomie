@@ -172,7 +172,8 @@ func ScrapeRestaurant(
 	}()
 
 	browser, err := pw.Chromium.Launch(playwright.BrowserTypeLaunchOptions{
-		Args: []string{"--disable-web-security"},
+		Args:     []string{"--disable-web-security"},
+		Headless: new(true),
 	})
 	if err != nil {
 		return nil, fmt.Errorf("could not launch browser: %w", err)
