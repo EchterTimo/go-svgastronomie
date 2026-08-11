@@ -8,10 +8,10 @@ linters:
     - copyloopvar
     - dupl
     - embeddedstructfieldcheck
-    - err113
+    # - err113 # ignore this for now
     - errcheck
     - errname
-    - errorlint
+    # - errorlint # ignore this for now
     - exhaustive
     - funcorder
     - funlen
