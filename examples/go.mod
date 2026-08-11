@@ -2,7 +2,7 @@ module demo
 
 go 1.26.5
 
-require svgastronomie v0.0.0
+require github.com/EchterTimo/go-svgastronomie v0.0.0
 
 require (
 	github.com/deckarep/golang-set/v2 v2.9.0 // indirect
@@ -12,4 +12,4 @@ require (
 	go.mongodb.org/mongo-driver v1.17.4 // indirect
 )
 
-replace svgastronomie => ..
+replace github.com/EchterTimo/go-svgastronomie => ..

@@ -5,7 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	sv "svgastronomie"
+
+	sv "github.com/EchterTimo/go-svgastronomie"
 )
 
 func onDay(day sv.Day) {
