@@ -15,7 +15,7 @@ go get github.com/EchterTimo/go-svgastronomie
 
 ## Usage
 
-coming soon
+Check out the [example](./examples/) directory for some usage examples.
 
 ## Links
 
