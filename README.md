@@ -34,4 +34,4 @@ Disallow:
 
 Use this scraper responsibly and at your own risk.
 
-This project is not affiliated with or endorsed by [sv-group](https://sv-group.com/)
+This project is not affiliated with or endorsed by [sv-group](https://sv-group.com/).
