@@ -7,7 +7,7 @@ readonly BOLD_GREEN='\033[1;32m'
 readonly RESET='\033[0m'
 readonly PREFIX="${CYAN}[.githooks/pre-push]${RESET}"
 
-function check_installed() {
+function checkInstalled() {
 	local cmd="$1"
 	if ! command -v "$cmd" &>/dev/null; then
 		echo "Error: $cmd is not installed. Please install it to proceed." >&2
@@ -15,16 +15,25 @@ function check_installed() {
 	fi
 }
 
-function run_linters() {
+function checkTidy() {
+	echo -e "${PREFIX} Checking go.mod and go.sum..."
+	if ! go mod tidy -diff >/dev/null 2>&1; then
+		echo "Error: go.mod or go.sum is not tidy. Please run 'go mod tidy' to fix it." >&2
+		exit 1
+	fi
+}
+
+function runLinters() {
 	echo -e "${PREFIX} Running linters..."
 	golangci-lint run
 }
 
 function main() {
 	echo -e "${PREFIX} Starting pre-push checks..."
-	check_installed "go"
-	check_installed "golangci-lint"
-	run_linters
+	checkInstalled "go"
+	checkInstalled "golangci-lint"
+	checkTidy
+	runLinters
 	echo -e "${PREFIX} ${BOLD_GREEN}DONE!${RESET}"
 }
 
