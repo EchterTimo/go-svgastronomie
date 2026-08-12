@@ -8,25 +8,24 @@ readonly RESET='\033[0m'
 readonly PREFIX="${CYAN}[.githooks/pre-push]${RESET}"
 
 function check_installed() {
-    local cmd="$1"
-    if ! command -v "$cmd" &> /dev/null; then
-        echo "Error: $cmd is not installed. Please install it to proceed." >&2
-        exit 1
-    fi
+	local cmd="$1"
+	if ! command -v "$cmd" &>/dev/null; then
+		echo "Error: $cmd is not installed. Please install it to proceed." >&2
+		exit 1
+	fi
 }
 
 function run_linters() {
-    echo -e "${PREFIX} Running linters..."
-    golangci-lint run
+	echo -e "${PREFIX} Running linters..."
+	golangci-lint run
 }
 
-
 function main() {
-    echo -e "${PREFIX} Starting pre-push checks..."
-    check_installed "go"
-    check_installed "golangci-lint"
-    run_linters
-    echo -e "${PREFIX} ${BOLD_GREEN}DONE!${RESET}"
+	echo -e "${PREFIX} Starting pre-push checks..."
+	check_installed "go"
+	check_installed "golangci-lint"
+	run_linters
+	echo -e "${PREFIX} ${BOLD_GREEN}DONE!${RESET}"
 }
 
 main "$@"
