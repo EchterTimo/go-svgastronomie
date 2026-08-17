@@ -5,7 +5,7 @@
 [![go reference](https://pkg.go.dev/badge/github.com/EchterTimo/go-svgastronomie.svg)](https://pkg.go.dev/github.com/EchterTimo/go-svgastronomie)
 [![GitHub](https://img.shields.io/badge/GitHub-5c5c5c?&logo=github&logoColor=white)](https://github.com/EchterTimo/go-svgastronomie)
 
-A web scraper for extracing the weekly menu from [sv-gastronomie.de](https://sv-gastronomie.de).
+A web scraper for extracting the weekly menu from [sv-gastronomie.de](https://sv-gastronomie.de).
 
 ## Installation
 
