@@ -36,11 +36,6 @@ func Install() {
 	}
 }
 
-// getDaysOfWeek returns the days of the week in German abbreviations.
-func getDaysOfWeek() []string {
-	return []string{"Mo.", "Di.", "Mi.", "Do.", "Fr."}
-}
-
 // getWeekStart returns the date (time.Time) of the Monday of the current week.
 func getWeekStart(now time.Time) time.Time {
 	weekday := int(now.Weekday())
@@ -190,7 +185,7 @@ func ScrapeRestaurant(
 	}()
 
 	browser, err := pw.Chromium.Launch(playwright.BrowserTypeLaunchOptions{
-		Args:     []string{"--disable-web-security"},
+		Args:     []string{"--disable-web-security", "--lang=de-DE"},
 		Headless: new(true),
 	})
 	if err != nil {
@@ -202,10 +197,23 @@ func ScrapeRestaurant(
 		}
 	}()
 
-	page, err := browser.NewPage(playwright.BrowserNewPageOptions{
+	context, err := browser.NewContext(playwright.BrowserNewContextOptions{
+		ExtraHttpHeaders: map[string]string{
+			"Accept-Language": "de-DE,de;q=0.9,en;q=0.8",
+		},
 		Locale:     new("de-DE"),
 		TimezoneId: new("Europe/Berlin"),
 	})
+	if err != nil {
+		return nil, fmt.Errorf("could not create browser context: %w", err)
+	}
+	defer func() {
+		if err := context.Close(); err != nil {
+			log.Printf("could not close browser context: %v", err)
+		}
+	}()
+
+	page, err := context.NewPage()
 	if err != nil {
 		return nil, fmt.Errorf("could not create page: %w", err)
 	}
@@ -242,65 +250,118 @@ func ScrapeRestaurant(
 	}
 
 	weekStart := getWeekStart(time.Now())
-	daysOfWeek := getDaysOfWeek()
+	if err := page.Locator("a.mat-mdc-tab-link").First().WaitFor(playwright.LocatorWaitForOptions{
+		State: playwright.WaitForSelectorStateVisible,
+	}); err != nil {
+		return nil, fmt.Errorf("could not wait for day tabs to render: %w", err)
+	}
+
+	rawDayLabels, err := page.Evaluate(`() => {
+		const tabs = Array.from(document.querySelectorAll("a.mat-mdc-tab-link"))
+			.filter(tab => /\d{2}\.\d{2}\./.test((tab.textContent || "").trim()));
+		return tabs
+			.map(tab => (tab.textContent || "").trim())
+			.filter(Boolean)
+			.slice(0, 5);
+	}`)
+	if err != nil {
+		return nil, fmt.Errorf("could not read top-level day tabs: %w", err)
+	}
+
+	daysOfWeek := make([]string, 0, 5)
+	if dayLabelsAny, ok := rawDayLabels.([]any); ok {
+		for _, rawDayLabel := range dayLabelsAny {
+			dayLabel, ok := rawDayLabel.(string)
+			if !ok {
+				continue
+			}
+			dayLabel = strings.TrimSpace(dayLabel)
+			if dayLabel == "" {
+				continue
+			}
+			daysOfWeek = append(daysOfWeek, dayLabel)
+		}
+	}
+	if dayLabels, ok := rawDayLabels.([]string); ok {
+		for _, dayLabel := range dayLabels {
+			dayLabel = strings.TrimSpace(dayLabel)
+			if dayLabel == "" {
+				continue
+			}
+			daysOfWeek = append(daysOfWeek, dayLabel)
+		}
+	}
+	if len(daysOfWeek) == 0 {
+		return nil, errors.New("top-level day tabs are empty")
+	}
+
 	weekDays := make([]Day, 0, len(daysOfWeek))
 
-	for index, dayName := range daysOfWeek {
-		dayTab := page.Locator("a.mat-mdc-tab-link").Filter(playwright.LocatorFilterOptions{
-			HasText: dayName,
-		}).First()
-		if err := dayTab.Click(); err != nil {
-			return nil, fmt.Errorf("could not click day %s: %w", dayName, err)
-		}
-
-		if _, err := page.WaitForFunction(`([day]) => {
-			const tabLinks = Array.from(document.querySelectorAll("a.mat-mdc-tab-link"));
-			const selectedTab = tabLinks.find(tab => (tab.textContent || "").includes(day));
-			return Boolean(selectedTab && selectedTab.classList.contains("mdc-tab--active"));
-		}`, []any{dayName}); err != nil {
-			return nil, fmt.Errorf("could not wait for day tab %s to become active: %w", dayName, err)
-		}
-
-		rawDishes, err := page.Evaluate(`([day]) => {
-			const tabLinks = Array.from(document.querySelectorAll("a.mat-mdc-tab-link"));
-			const selectedTab = tabLinks.find(tab => (tab.textContent || "").includes(day));
+	for index, dayLabel := range daysOfWeek {
+		rawDishes, err := page.Evaluate(`async ([tabIndex]) => {
+			const tabs = Array.from(document.querySelectorAll("a.mat-mdc-tab-link"))
+				.filter(tab => /\d{2}\.\d{2}\./.test((tab.textContent || "").trim()));
+			const selectedTab = tabs[tabIndex];
 			if (!selectedTab) {
 				return [];
 			}
 
-			const panelId = selectedTab.getAttribute("aria-controls");
-			const panel = panelId ? document.getElementById(panelId) : null;
-			if (!panel) {
-				return [];
+			selectedTab.click();
+
+			const normalize = (value) => (value || "").replace(/\s+/g, "").trim();
+			const selectedDayText = (selectedTab.textContent || "").trim();
+
+			const extractDishes = () => {
+				const panelId = selectedTab.getAttribute("aria-controls");
+				const panel = panelId ? document.getElementById(panelId) : null;
+				if (!panel) {
+					return [];
+				}
+
+				const menuCards = Array.from(panel.querySelectorAll("app-menu-card"));
+				const targetCard = menuCards.find(card => {
+					const activeDayText = card.querySelector("a.mat-mdc-tab-link.mdc-tab--active strong")?.textContent
+						?? card.querySelector("a.mat-mdc-tab-link.mdc-tab--active")?.textContent
+						?? "";
+					const activeNormalized = normalize(activeDayText);
+					const selectedNormalized = normalize(selectedDayText);
+					return activeNormalized !== ""
+						&& (selectedNormalized.includes(activeNormalized) || activeNormalized.includes(selectedNormalized));
+				}) ?? menuCards[menuCards.length - 1] ?? panel;
+
+				const categories = Array.from(targetCard.querySelectorAll("app-category"));
+				return categories.map(node => {
+					const name = node.querySelector("span.pre-wrap")?.textContent ?? "";
+					const description = node.querySelector("div.product-teaser")?.textContent ?? "";
+					const price = node.querySelector("div.price")?.textContent
+						?? node.querySelector("div.price-column")?.textContent
+						?? "";
+					const tags = Array.from(node.querySelectorAll("app-product-custom-tag img"))
+						.map(tagNode => tagNode.getAttribute("title"))
+						.filter(Boolean);
+
+					return { name, description, price, tags };
+				});
+			};
+
+			for (let attempt = 0; attempt < 40; attempt += 1) {
+				const dishes = extractDishes();
+				const hasNamedDish = dishes.some(dish => (dish.name || "").trim() !== "");
+				if (selectedTab.classList.contains("mdc-tab--active") && hasNamedDish) {
+					return dishes;
+				}
+				await new Promise(resolve => setTimeout(resolve, 125));
 			}
 
-			const menuCards = Array.from(panel.querySelectorAll("app-menu-card"));
-			const targetCard = menuCards.find(card => {
-				const activeDayText = card.querySelector("a.mat-mdc-tab-link.mdc-tab--active strong")?.textContent ?? "";
-				return activeDayText.includes(day);
-			}) ?? menuCards[menuCards.length - 1] ?? panel;
-
-			const categories = Array.from(targetCard.querySelectorAll("app-category"));
-			return categories.map(node => {
-				const name = node.querySelector("span.pre-wrap")?.textContent ?? "";
-				const description = node.querySelector("div.product-teaser")?.textContent ?? "";
-				const price = node.querySelector("div.price")?.textContent
-					?? node.querySelector("div.price-column")?.textContent
-					?? "";
-				const tags = Array.from(node.querySelectorAll("app-product-custom-tag img"))
-					.map(tagNode => tagNode.getAttribute("title"))
-					.filter(Boolean);
-
-				return { name, description, price, tags };
-			});
-		}`, []any{dayName})
+			return extractDishes();
+		}`, []any{index})
 		if err != nil {
-			return nil, fmt.Errorf("could not wait for dishes for day %s: %w", dayName, err)
+			return nil, fmt.Errorf("could not load dishes for day %q: %w", dayLabel, err)
 		}
 
 		rawDishList, ok := rawDishes.([]any)
 		if !ok {
-			return nil, fmt.Errorf("unexpected dishes payload for day %s", dayName)
+			return nil, fmt.Errorf("unexpected dishes payload for day %q", dayLabel)
 		}
 
 		dishes := make([]Dish, 0, len(rawDishList))
@@ -315,7 +376,7 @@ func ScrapeRestaurant(
 
 			price, err := parsePrice(rawDishData.Price)
 			if err != nil {
-				log.Printf("skipping dish with unparseable price %q for day %s: %v", rawDishData.Price, dayName, err)
+				log.Printf("skipping dish with unparseable price %q for day %q: %v", rawDishData.Price, dayLabel, err)
 				continue
 			}
 

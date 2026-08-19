@@ -48,7 +48,47 @@
       },
       {
         "time": "2026-08-18T00:00:00+02:00",
-        "dishes": []
+        "dishes": [
+          {
+            "name": "Wunschgericht",
+            "description": "Ofenkartoffel mit Kräuterquark, dazu gebratene frische Zucchini, Karotten und Frühlingslauch",
+            "price": 4.5,
+            "tags": [
+              "Vegetarisch",
+              "Glutenfrei"
+            ]
+          },
+          {
+            "name": "Erdnusshähnchenragout",
+            "description": "mit Brokkoli, Karotte, Zwiebeln, Lauch, Basmatireis und Koriander",
+            "price": 5.5,
+            "tags": [
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Themensalat der Woche (Di,Mi und Do.)",
+            "description": "Orientalische-Salatwoche, so wie einige andere Köstlichkeiten auch. (Preise laut Aushang)",
+            "price": 0,
+            "tags": []
+          },
+          {
+            "name": "Franzbrötchen Woche",
+            "description": "Diese Woche für Euch, Franzbrötchen im Bistro/Barista",
+            "price": 1,
+            "tags": [
+              "Vegetarisch"
+            ]
+          },
+          {
+            "name": "In der Sommerzeit auf die Hand und jede Woche anders.",
+            "description": "Cheescake and Cherry: Milchreis mit Sauerkirschen, Sahne, Cheescake-Creme, Lotus Biskoff Crumbs und karamelisierte Mandeln",
+            "price": 2.5,
+            "tags": [
+              "Vegetarisch"
+            ]
+          }
+        ]
       },
       {
         "time": "2026-08-19T00:00:00+02:00",
