@@ -246,30 +246,56 @@ func ScrapeRestaurant(
 	weekDays := make([]Day, 0, len(daysOfWeek))
 
 	for index, dayName := range daysOfWeek {
-		if err := page.Locator(fmt.Sprintf("a:has-text('%s')", dayName)).Click(); err != nil {
+		dayTab := page.Locator("a.mat-mdc-tab-link").Filter(playwright.LocatorFilterOptions{
+			HasText: dayName,
+		}).First()
+		if err := dayTab.Click(); err != nil {
 			return nil, fmt.Errorf("could not click day %s: %w", dayName, err)
 		}
 
-		if err := page.Locator("app-category").First().WaitFor(playwright.LocatorWaitForOptions{
-			State: playwright.WaitForSelectorStateVisible,
-		}); err != nil {
-			return nil, fmt.Errorf("could not wait for dishes for day %s: %w", dayName, err)
+		if _, err := page.WaitForFunction(`([day]) => {
+			const tabLinks = Array.from(document.querySelectorAll("a.mat-mdc-tab-link"));
+			const selectedTab = tabLinks.find(tab => (tab.textContent || "").includes(day));
+			return Boolean(selectedTab && selectedTab.classList.contains("mdc-tab--active"));
+		}`, []any{dayName}); err != nil {
+			return nil, fmt.Errorf("could not wait for day tab %s to become active: %w", dayName, err)
 		}
 
-		rawDishes, err := page.Locator("app-category:visible").EvaluateAll(`nodes => nodes.map(node => {
-			const name = node.querySelector("span.pre-wrap")?.textContent ?? "";
-			const description = node.querySelector("div.product-teaser")?.textContent ?? "";
-			const price = node.querySelector("div.price")?.textContent
-				?? node.querySelector("div.price-column")?.textContent
-				?? "";
-			const tags = Array.from(node.querySelectorAll("app-product-custom-tag img"))
-				.map(tagNode => tagNode.getAttribute("title"))
-				.filter(Boolean);
+		rawDishes, err := page.Evaluate(`([day]) => {
+			const tabLinks = Array.from(document.querySelectorAll("a.mat-mdc-tab-link"));
+			const selectedTab = tabLinks.find(tab => (tab.textContent || "").includes(day));
+			if (!selectedTab) {
+				return [];
+			}
 
-			return { name, description, price, tags };
-		})`)
+			const panelId = selectedTab.getAttribute("aria-controls");
+			const panel = panelId ? document.getElementById(panelId) : null;
+			if (!panel) {
+				return [];
+			}
+
+			const menuCards = Array.from(panel.querySelectorAll("app-menu-card"));
+			const targetCard = menuCards.find(card => {
+				const activeDayText = card.querySelector("a.mat-mdc-tab-link.mdc-tab--active strong")?.textContent ?? "";
+				return activeDayText.includes(day);
+			}) ?? menuCards[menuCards.length - 1] ?? panel;
+
+			const categories = Array.from(targetCard.querySelectorAll("app-category"));
+			return categories.map(node => {
+				const name = node.querySelector("span.pre-wrap")?.textContent ?? "";
+				const description = node.querySelector("div.product-teaser")?.textContent ?? "";
+				const price = node.querySelector("div.price")?.textContent
+					?? node.querySelector("div.price-column")?.textContent
+					?? "";
+				const tags = Array.from(node.querySelectorAll("app-product-custom-tag img"))
+					.map(tagNode => tagNode.getAttribute("title"))
+					.filter(Boolean);
+
+				return { name, description, price, tags };
+			});
+		}`, []any{dayName})
 		if err != nil {
-			return nil, fmt.Errorf("could not read dishes for day %s: %w", dayName, err)
+			return nil, fmt.Errorf("could not wait for dishes for day %s: %w", dayName, err)
 		}
 
 		rawDishList, ok := rawDishes.([]any)

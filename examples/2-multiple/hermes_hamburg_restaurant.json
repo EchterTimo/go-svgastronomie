@@ -5,57 +5,20 @@
   "week": {
     "days": [
       {
-        "time": "2026-08-10T00:00:00+02:00",
+        "time": "2026-08-17T00:00:00+02:00",
         "dishes": [
           {
-            "name": "Riesen-Germknödel (Wunschgericht)",
-            "description": "mit Kirtschragout, Vanillesoße und Butter-Zimt-Crumble",
+            "name": "Blumenkohl-Kartoffelschnitte",
+            "description": "mit grünen Bohnen und Schmand-Dip",
             "price": 4.5,
-            "tags": [
-              "Vegetarisch"
-            ]
-          },
-          {
-            "name": "Wunschgericht (Hermes)",
-            "description": "Currywurst (vegan mögl.) mit Currysauce und Pommes frites",
-            "price": 5.5,
-            "tags": [
-              "Glutenfrei",
-              "Laktosefrei"
-            ]
-          },
-          {
-            "name": "Themensalat der Woche (Di,Mi und Do.)",
-            "description": "In dieser Woche ist es der Chef-Salat im Vordergrund, so wie einige andere Köstlichkeiten auch.",
-            "price": 0,
-            "tags": []
-          },
-          {
-            "name": "Diese Woche im Barista",
-            "description": "Red Bull div. für 1,75€ ohne Pfand",
-            "price": 1.75,
-            "tags": []
-          },
-          {
-            "name": "In der Sommerzeit auf die Hand und jede Woche anders.",
-            "description": "Oriental Pistachio Hill: Milchreis mit Datteln, Sahne, Granola, Bananen, Pistaziensoße und Granatapfelkerne",
-            "price": 2.5,
             "tags": [
               "Vegetarisch",
               "Glutenfrei"
             ]
           },
           {
-            "name": "Grieschicher Teller",
-            "description": "mit Kichererbsenbällchen, Feta, Salat, Knoblauchsauce und Fladenbrot",
-            "price": 4.5,
-            "tags": [
-              "Vegetarisch"
-            ]
-          },
-          {
-            "name": "Vom Grill draußen...",
-            "description": "Marinierte Schweinshaxe an Krautsalat, Bayrischen Kartoffelsalat-Gurkensalat, karamellisierten Apfel und Senf",
+            "name": "Wurstgulasch",
+            "description": "mit Spirellis, Schmand, milder Peperoni und Frühlingslauch",
             "price": 5.5,
             "tags": []
           },
@@ -66,14 +29,16 @@
             "tags": []
           },
           {
-            "name": "Diese Woche im Barista",
-            "description": "Red Bull div. für 1,75€ ohne Pfand",
-            "price": 1.75,
-            "tags": []
+            "name": "Franzbrötchen Woche",
+            "description": "Diese Woche für Euch, Franzbrötchen im Bistro/Barista",
+            "price": 1,
+            "tags": [
+              "Vegetarisch"
+            ]
           },
           {
-            "name": "Ofenkartoffel",
-            "description": "mit Kräuter-Heringssalat und mariniertem Karotte-Rote Beete Topping",
+            "name": "Hähnchencurry",
+            "description": "mit Basmatireis, Lauch, Kichererbsen und zweierlei von der Cherrytomate",
             "price": 6.5,
             "tags": [
               "Glutenfrei"
@@ -82,314 +47,158 @@
         ]
       },
       {
-        "time": "2026-08-11T00:00:00+02:00",
+        "time": "2026-08-18T00:00:00+02:00",
         "dishes": [
           {
-            "name": "Grieschicher Teller",
-            "description": "mit Kichererbsenbällchen, Feta, Salat, Knoblauchsauce und Fladenbrot",
+            "name": "Wunschgericht",
+            "description": "Ofenkartoffel mit Kräuterquark, dazu gebratene frische Zucchini, Karotten und Frühlingslauch",
             "price": 4.5,
+            "tags": [
+              "Vegetarisch",
+              "Glutenfrei"
+            ]
+          },
+          {
+            "name": "Erdnusshähnchenragout",
+            "description": "mit Brokkoli, Karotte, Zwiebeln, Lauch, Basmatireis und Koriander",
+            "price": 5.5,
+            "tags": [
+              "Laktosefrei"
+            ]
+          },
+          {
+            "name": "Themensalat der Woche (Di,Mi und Do.)",
+            "description": "Orientalische-Salatwoche, so wie einige andere Köstlichkeiten auch. (Preise laut Aushang)",
+            "price": 0,
+            "tags": []
+          },
+          {
+            "name": "Franzbrötchen Woche",
+            "description": "Diese Woche für Euch, Franzbrötchen im Bistro/Barista",
+            "price": 1,
             "tags": [
               "Vegetarisch"
             ]
           },
           {
-            "name": "Vom Grill draußen...",
-            "description": "Marinierte Schweinshaxe an Krautsalat, Bayrischen Kartoffelsalat-Gurkensalat, karamellisierten Apfel und Senf",
-            "price": 5.5,
-            "tags": []
-          },
-          {
-            "name": "Montags gibt es die Wochenstart-Salatbar",
-            "description": "Und Dienstag-Donnerstag zusätzlich die Themensaltbar (Preise laut Aushang)",
-            "price": 0,
-            "tags": []
-          },
-          {
-            "name": "Diese Woche im Barista",
-            "description": "Red Bull div. für 1,75€ ohne Pfand",
-            "price": 1.75,
-            "tags": []
-          },
-          {
-            "name": "Ofenkartoffel",
-            "description": "mit Kräuter-Heringssalat und mariniertem Karotte-Rote Beete Topping",
-            "price": 6.5,
-            "tags": [
-              "Glutenfrei"
-            ]
-          },
-          {
-            "name": "Schnitzel Vegan",
-            "description": "mit Bohnen, Saltzkartoffeln, Sauce Holandaise und Zitrone",
-            "price": 4.5,
-            "tags": [
-              "Vegan",
-              "Laktosefrei"
-            ]
-          },
-          {
-            "name": "Lasagne (Wunschgericht)",
-            "description": "mit Rinderhackfleisch, Sellerie, Karotte, Lauch, Zwiebeln, Tomatensoße, Mozzarella und Rucola",
-            "price": 5.5,
-            "tags": []
-          },
-          {
-            "name": "Themensalat der Woche (Di,Mi und Do.)",
-            "description": "In dieser Woche ist es der Chef-Salat im Vordergrund, so wie einige andere Köstlichkeiten auch.",
-            "price": 0,
-            "tags": []
-          },
-          {
-            "name": "Diese Woche im Barista",
-            "description": "Red Bull div. für 1,75€ ohne Pfand",
-            "price": 1.75,
-            "tags": []
-          },
-          {
             "name": "In der Sommerzeit auf die Hand und jede Woche anders.",
-            "description": "Oriental Pistachio Hill: Milchreis mit Datteln, Sahne, Granola, Bananen, Pistaziensoße und Granatapfelkerne",
+            "description": "Cheescake and Cherry: Milchreis mit Sauerkirschen, Sahne, Cheescake-Creme, Lotus Biskoff Crumbs und karamelisierte Mandeln",
             "price": 2.5,
             "tags": [
-              "Vegetarisch",
-              "Glutenfrei"
+              "Vegetarisch"
             ]
           }
         ]
       },
       {
-        "time": "2026-08-12T00:00:00+02:00",
+        "time": "2026-08-19T00:00:00+02:00",
         "dishes": [
           {
-            "name": "Schnitzel Vegan",
-            "description": "mit Bohnen, Saltzkartoffeln, Sauce Holandaise und Zitrone",
-            "price": 4.5,
-            "tags": [
-              "Vegan",
-              "Laktosefrei"
-            ]
-          },
-          {
-            "name": "Lasagne (Wunschgericht)",
-            "description": "mit Rinderhackfleisch, Sellerie, Karotte, Lauch, Zwiebeln, Tomatensoße, Mozzarella und Rucola",
-            "price": 5.5,
-            "tags": []
-          },
-          {
-            "name": "Themensalat der Woche (Di,Mi und Do.)",
-            "description": "In dieser Woche ist es der Chef-Salat im Vordergrund, so wie einige andere Köstlichkeiten auch.",
-            "price": 0,
-            "tags": []
-          },
-          {
-            "name": "Diese Woche im Barista",
-            "description": "Red Bull div. für 1,75€ ohne Pfand",
-            "price": 1.75,
-            "tags": []
-          },
-          {
-            "name": "In der Sommerzeit auf die Hand und jede Woche anders.",
-            "description": "Oriental Pistachio Hill: Milchreis mit Datteln, Sahne, Granola, Bananen, Pistaziensoße und Granatapfelkerne",
-            "price": 2.5,
-            "tags": [
-              "Vegetarisch",
-              "Glutenfrei"
-            ]
-          },
-          {
-            "name": "Riesen-Germknödel (Wunschgericht)",
-            "description": "mit Kirtschragout, Vanillesoße und Butter-Zimt-Crumble",
+            "name": "Spinatknödel (Wunschgericht Hermes)",
+            "description": "mit Tomatensugo, geriebenen Mozzarella und Schnittlauch",
             "price": 4.5,
             "tags": [
               "Vegetarisch"
             ]
           },
           {
-            "name": "Wunschgericht (Hermes)",
-            "description": "Currywurst (vegan mögl.) mit Currysauce und Pommes frites",
+            "name": "Ofenseelachs",
+            "description": "unter einer Basilikum-Parmesankruste, Rosmarin-Polenta, Tomaten-Zucchini-Fenchelragout und Zitrone",
             "price": 5.5,
-            "tags": [
-              "Glutenfrei",
-              "Laktosefrei"
-            ]
+            "tags": []
           },
           {
             "name": "Themensalat der Woche (Di,Mi und Do.)",
-            "description": "In dieser Woche ist es der Chef-Salat im Vordergrund, so wie einige andere Köstlichkeiten auch.",
+            "description": "Orientalische-Salatwoche, so wie einige andere Köstlichkeiten auch. (Preise laut Aushang)",
             "price": 0,
             "tags": []
           },
           {
-            "name": "Diese Woche im Barista",
-            "description": "Red Bull div. für 1,75€ ohne Pfand",
-            "price": 1.75,
-            "tags": []
+            "name": "Franzbrötchen Woche",
+            "description": "Diese Woche für Euch, Franzbrötchen im Bistro/Barista",
+            "price": 1,
+            "tags": [
+              "Vegetarisch"
+            ]
           },
           {
             "name": "In der Sommerzeit auf die Hand und jede Woche anders.",
-            "description": "Oriental Pistachio Hill: Milchreis mit Datteln, Sahne, Granola, Bananen, Pistaziensoße und Granatapfelkerne",
+            "description": "Cheescake and Cherry: Milchreis mit Sauerkirschen, Sahne, Cheescake-Creme, Lotus Biskoff Crumbs und karamelisierte Mandeln",
             "price": 2.5,
             "tags": [
-              "Vegetarisch",
-              "Glutenfrei"
+              "Vegetarisch"
             ]
           }
         ]
       },
       {
-        "time": "2026-08-13T00:00:00+02:00",
+        "time": "2026-08-20T00:00:00+02:00",
         "dishes": [
           {
-            "name": "Schnitzel Vegan",
-            "description": "mit Bohnen, Saltzkartoffeln, Sauce Holandaise und Zitrone",
-            "price": 4.5,
-            "tags": [
-              "Vegan",
-              "Laktosefrei"
-            ]
-          },
-          {
-            "name": "Lasagne (Wunschgericht)",
-            "description": "mit Rinderhackfleisch, Sellerie, Karotte, Lauch, Zwiebeln, Tomatensoße, Mozzarella und Rucola",
-            "price": 5.5,
-            "tags": []
-          },
-          {
-            "name": "Themensalat der Woche (Di,Mi und Do.)",
-            "description": "In dieser Woche ist es der Chef-Salat im Vordergrund, so wie einige andere Köstlichkeiten auch.",
-            "price": 0,
-            "tags": []
-          },
-          {
-            "name": "Diese Woche im Barista",
-            "description": "Red Bull div. für 1,75€ ohne Pfand",
-            "price": 1.75,
-            "tags": []
-          },
-          {
-            "name": "In der Sommerzeit auf die Hand und jede Woche anders.",
-            "description": "Oriental Pistachio Hill: Milchreis mit Datteln, Sahne, Granola, Bananen, Pistaziensoße und Granatapfelkerne",
-            "price": 2.5,
-            "tags": [
-              "Vegetarisch",
-              "Glutenfrei"
-            ]
-          },
-          {
-            "name": "Riesen-Germknödel (Wunschgericht)",
-            "description": "mit Kirtschragout, Vanillesoße und Butter-Zimt-Crumble",
+            "name": "Klassiker",
+            "description": "Rührei mit Rahmspinat, Kartoffelstampf und Schnittlauch",
             "price": 4.5,
             "tags": [
               "Vegetarisch"
             ]
           },
           {
-            "name": "Wunschgericht (Hermes)",
-            "description": "Currywurst (vegan mögl.) mit Currysauce und Pommes frites",
+            "name": "Schweineragout Züricher Art",
+            "description": "mit Champignons, Spätzle und Schnittlauch",
             "price": 5.5,
-            "tags": [
-              "Glutenfrei",
-              "Laktosefrei"
-            ]
+            "tags": []
           },
           {
             "name": "Themensalat der Woche (Di,Mi und Do.)",
-            "description": "In dieser Woche ist es der Chef-Salat im Vordergrund, so wie einige andere Köstlichkeiten auch.",
+            "description": "Orientalische-Salatwoche, so wie einige andere Köstlichkeiten auch. (Preise laut Aushang)",
             "price": 0,
             "tags": []
           },
           {
-            "name": "Diese Woche im Barista",
-            "description": "Red Bull div. für 1,75€ ohne Pfand",
-            "price": 1.75,
-            "tags": []
+            "name": "Franzbrötchen Woche",
+            "description": "Diese Woche für Euch, Franzbrötchen für im Bistro/Barista",
+            "price": 1,
+            "tags": [
+              "Vegetarisch"
+            ]
           },
           {
             "name": "In der Sommerzeit auf die Hand und jede Woche anders.",
-            "description": "Oriental Pistachio Hill: Milchreis mit Datteln, Sahne, Granola, Bananen, Pistaziensoße und Granatapfelkerne",
+            "description": "Cheescake and Cherry: Milchreis mit Sauerkirschen, Sahne, Cheescake-Creme, Lotus Biskoff Crumbs und karamelisierte Mandeln",
             "price": 2.5,
             "tags": [
-              "Vegetarisch",
-              "Glutenfrei"
+              "Vegetarisch"
             ]
           }
         ]
       },
       {
-        "time": "2026-08-14T00:00:00+02:00",
+        "time": "2026-08-21T00:00:00+02:00",
         "dishes": [
           {
-            "name": "Riesen-Germknödel (Wunschgericht)",
-            "description": "mit Kirtschragout, Vanillesoße und Butter-Zimt-Crumble",
+            "name": "Das Restaurant ist freitags geschlossen.",
+            "description": "Wie gewohnt ist die Ausgabe im Bistro, in der Menülinie und Preisebene von Fit & Vital.",
             "price": 4.5,
-            "tags": [
-              "Vegetarisch"
-            ]
+            "tags": []
           },
           {
-            "name": "Wunschgericht (Hermes)",
-            "description": "Currywurst (vegan mögl.) mit Currysauce und Pommes frites",
+            "name": "Das Restaurant ist freitags geschlossen.",
+            "description": "Wie gewohnt ist die Ausgabe im Bistro, in der Menülinie und Preisebene von Local & Global.",
             "price": 5.5,
-            "tags": [
-              "Glutenfrei",
-              "Laktosefrei"
-            ]
+            "tags": []
           },
           {
-            "name": "Themensalat der Woche (Di,Mi und Do.)",
-            "description": "In dieser Woche ist es der Chef-Salat im Vordergrund, so wie einige andere Köstlichkeiten auch.",
+            "name": "Das Restaurant ist freitags geschlossen.",
+            "description": "Wie gewohnt ist die Ausgabe im Bistro, in der Menülinie und Preisebene von der Salatbar.",
             "price": 0,
             "tags": []
           },
           {
-            "name": "Diese Woche im Barista",
-            "description": "Red Bull div. für 1,75€ ohne Pfand",
-            "price": 1.75,
-            "tags": []
-          },
-          {
-            "name": "In der Sommerzeit auf die Hand und jede Woche anders.",
-            "description": "Oriental Pistachio Hill: Milchreis mit Datteln, Sahne, Granola, Bananen, Pistaziensoße und Granatapfelkerne",
-            "price": 2.5,
-            "tags": [
-              "Vegetarisch",
-              "Glutenfrei"
-            ]
-          },
-          {
-            "name": "Wunschgericht (Hermes)",
-            "description": "Gefüllte Cannelloni mit Ricotta, Spinat, dazu Tomtatensoße, Mozzarella, Rucola  Sonnenblumenkernen",
-            "price": 4.5,
+            "name": "Franzbrötchen Woche",
+            "description": "Diese Woche für Euch, Franzbrötchen im Bistro/Barista",
+            "price": 1,
             "tags": [
               "Vegetarisch"
-            ]
-          },
-          {
-            "name": "Hähnchenragout",
-            "description": "mit Champignons, grünem Peffer, Reis und Frühlingslauch",
-            "price": 5.5,
-            "tags": [
-              "Glutenfrei"
-            ]
-          },
-          {
-            "name": "Themensalat der Woche (Di,Mi und Do.)",
-            "description": "In dieser Woche ist es der Chef-Salat im Vordergrund, so wie einige andere Köstlichkeiten auch.",
-            "price": 0,
-            "tags": []
-          },
-          {
-            "name": "Diese Woche im Barista",
-            "description": "Red Bull div. für 1,75€ ohne Pfand",
-            "price": 1.75,
-            "tags": []
-          },
-          {
-            "name": "In der Sommerzeit auf die Hand und jede Woche anders.",
-            "description": "Oriental Pistachio Hill: Milchreis mit Datteln, Sahne, Granola, Bananen, Pistaziensoße und Granatapfelkerne",
-            "price": 2.5,
-            "tags": [
-              "Vegetarisch",
-              "Glutenfrei"
             ]
           }
         ]
