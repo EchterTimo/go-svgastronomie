@@ -17,9 +17,16 @@ go get github.com/EchterTimo/go-svgastronomie
 
 Check out the [examples](./examples/) directory for some usage examples.
 
+## Featured Projects
+
+Check out the following project that uses this library:
+
+[![Repo Card](https://github-stats-extended.vercel.app/api/pin/?username=DerPeter77&repo=svgastronomie-tui)](https://github.com/DerPeter77/svgastronomie-tui)
+
 ## Links
 
 - [sv-group.com](https://sv-group.com)
+- [terminal user interface](https://github.com/DerPeter77/svgastronomie-tui)
 
 ## Legal
 
