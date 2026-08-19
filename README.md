@@ -1,7 +1,7 @@
 # go-svgastronomie
 
 [![license](https://img.shields.io/github/license/EchterTimo/go-svgastronomie)](https://github.com/EchterTimo/go-svgastronomie/blob/main/LICENSE)
-[![version](https://img.shields.io/github/v/tag/EchterTimo/go-svgastronomie?sort=semver&label=version)](https://github.com/EchterTimo/go-svgastronomie/releases)
+[![version](https://img.shields.io/github/v/tag/EchterTimo/go-svgastronomie?sort=semver&label=version&logo=git&logoColor=ffffff)](https://github.com/EchterTimo/go-svgastronomie/releases)
 [![go reference](https://pkg.go.dev/badge/github.com/EchterTimo/go-svgastronomie.svg)](https://pkg.go.dev/github.com/EchterTimo/go-svgastronomie)
 [![GitHub](https://img.shields.io/badge/GitHub-5c5c5c?&logo=github&logoColor=white)](https://github.com/EchterTimo/go-svgastronomie)
 
