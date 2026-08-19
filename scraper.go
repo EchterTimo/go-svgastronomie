@@ -268,7 +268,7 @@ func ScrapeRestaurant(
 		return nil, fmt.Errorf("could not read top-level day tabs: %w", err)
 	}
 
-	daysOfWeek := make([]string, 0, 5)
+	daysOfWeek := make([]string, 0, 5) //nolint:mnd
 	if dayLabelsAny, ok := rawDayLabels.([]any); ok {
 		for _, rawDayLabel := range dayLabelsAny {
 			dayLabel, ok := rawDayLabel.(string)
